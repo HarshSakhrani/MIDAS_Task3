@@ -45,7 +45,7 @@ from torch.utils.data import Dataset, DataLoader
 
 class FlipkartDataset(Dataset):
 
-  def __init__(self,dataframe,preTrainedBert,bertTokenizer,maxLength,device):
+  def __init__(self,dataframe,preTrainedBert,bertTokenizer,maxLength):
     self.data=dataframe
     self.bertTokenizer=bertTokenizer
     self.model=preTrainedBert 
@@ -58,10 +58,9 @@ class FlipkartDataset(Dataset):
     self.productDescription=str(self.data.iloc[idx,0])
     self.label=self.data.iloc[idx,3]
 
-    					self.encodedInput=self.bertTokenizer.encode_plus(text=self.productDescription,padding='max_length',truncation="longest_first",max_length=self.maxLength,return_tensors='pt',return_attention_mask=True,return_token_type_ids=True).to(device)
+    self.encodedInput=self.bertTokenizer.encode_plus(text=self.productDescription,padding='max_length',truncation="longest_first",max_length=self.maxLength,return_tensors='pt',return_attention_mask=True,return_token_type_ids=True)
     #print(self.encodedInput)
-    self.model.to(device)
-    			    self.embedding=self.model(input_ids=self.encodedInput['input_ids'],attention_mask=self.encodedInput['attention_mask'],token_type_ids=self.encodedInput['token_type_ids']).last_hidden_state
+    self.embedding=self.model(input_ids=self.encodedInput['input_ids'],attention_mask=self.encodedInput['attention_mask'],token_type_ids=self.encodedInput['token_type_ids']).last_hidden_state
 
     return self.embedding,self.label
 
@@ -69,9 +68,9 @@ class FlipkartDataset(Dataset):
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertModel.from_pretrained('bert-base-uncased')
 
-flipkartTrainDataset=FlipkartDataset(dataframe=dfTrain,preTrainedBert=model,bertTokenizer=tokenizer,maxLength=512,device=device)
-flipkartTestDataset=FlipkartDataset(dataframe=dfTest,preTrainedBert=model,bertTokenizer=tokenizer,maxLength=512,device=device)
-flipkartValDataset=FlipkartDataset(dataframe=dfVal,preTrainedBert=model,bertTokenizer=tokenizer,maxLength=512,device=device)
+flipkartTrainDataset=FlipkartDataset(dataframe=dfTrain,preTrainedBert=model,bertTokenizer=tokenizer,maxLength=512)
+flipkartTestDataset=FlipkartDataset(dataframe=dfTest,preTrainedBert=model,bertTokenizer=tokenizer,maxLength=512)
+flipkartValDataset=FlipkartDataset(dataframe=dfVal,preTrainedBert=model,bertTokenizer=tokenizer,maxLength=512)
 
 trainLoader=torch.utils.data.DataLoader(flipkartTrainDataset,batch_size=8,sampler=trainSampler)
 testLoader=torch.utils.data.DataLoader(flipkartTestDataset,batch_size=8,shuffle=True)
