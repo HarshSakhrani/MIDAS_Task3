@@ -177,9 +177,9 @@ def train_model(model,patience,epochs):
 
       predictions=torch.argmax(scores,dim=1)
 
-      if i==0:
-        print("Targets:-",targets)
-        print("Predictions:-",predictions)
+      #if i==0:
+        #print("Targets:-",targets)
+        #print("Predictions:-",predictions)
 
 
       correct = (predictions==targets).sum()
