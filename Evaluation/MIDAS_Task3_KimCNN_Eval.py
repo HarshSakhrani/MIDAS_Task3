@@ -25,7 +25,7 @@ import torchvision.transforms as visionTransforms
 import PIL.Image as Image
 from torchvision.transforms import ToTensor,ToPILImage
 
-df=pd.read_csv("Datasets/Task3_Cleaned_TextModality.csv",index_col=0)
+df=pd.read_csv("path_to_add/MIDAS_Task3/Datasets/Task3_Cleaned_TextModality.csv",index_col=0)  #Please add path_to_add that is required for your local Machine
 
 dfTest=df.sample(frac=0.2).reset_index(drop=True)
 
@@ -112,9 +112,9 @@ model = BertModel.from_pretrained('bert-base-uncased')
 kimcnn=KimCNN(preTrainedBert=model)
 kimcnn.to(device)
 if torch.cuda.is_available():
-  kimcnn.load_state_dict(torch.load("Models/KimCNN.pt"))
+  kimcnn.load_state_dict(torch.load("path_to_add/MIDAS_Task3/Models/KimCNN.pt")) #Please add path_to_add that is required for your local Machine
 else:
-  kimcnn.load_state_dict(torch.load("Models/KimCNN.pt",map_location=torch.device('cpu')))
+  kimcnn.load_state_dict(torch.load("path_to_add/MIDAS_Task3/Models/KimCNN.pt",map_location=torch.device('cpu'))) #Please add path_to_add that is required for your local Machine
 kimcnn.eval()
 
 def checkClassificationMetrics(loader,model):

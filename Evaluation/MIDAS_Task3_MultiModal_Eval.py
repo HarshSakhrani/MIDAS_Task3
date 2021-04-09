@@ -25,7 +25,9 @@ import torchvision.transforms as visionTransforms
 import PIL.Image as Image
 from torchvision.transforms import ToTensor,ToPILImage
 
-df=pd.read_csv("Datasets/Task3_Cleaned_Multimodal.csv",index_col=0)
+df=pd.read_csv("path_to_add/MIDAS_Task3/Datasets/Task3_Cleaned_Multimodal.csv",index_col=0)  #Please add path_to_add that is required for your local Machine
+
+df['Image Path']="path_to_add/MIDAS_Task3/"+df['Image Path'] #Please add path_to_add that is required for your local Machine
 
 dfTest=df.sample(frac=0.2).reset_index(drop=True)
 
@@ -148,9 +150,9 @@ vggModel=models.vgg13(pretrained=True)
 multiModalModel=MultiModalNetwork(preTrainedBert=bertModel,preTrainedVGG=vggModel)
 multiModalModel.to(device)
 if torch.cuda.is_available():
-  multiModalModel.load_state_dict(torch.load("Models/MultiModalModel.pt"))
+  multiModalModel.load_state_dict(torch.load("path_to_add/MIDAS_Task3/Models/MultiModalModel.pt")) #Please add path_to_add that is required for your local Machine
 else:
-  multiModalModel.load_state_dict(torch.load("Models/MultiModalModel.pt",map_location=torch.device('cpu')))
+  multiModalModel.load_state_dict(torch.load("path_to_add/MIDAS_Task3/Models/MultiModalModel.pt",map_location=torch.device('cpu'))) #Please add path_to_add that is required for your local Machine
 
 multiModalModel.eval()
 

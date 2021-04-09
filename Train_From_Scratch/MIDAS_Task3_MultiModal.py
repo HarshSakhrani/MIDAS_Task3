@@ -25,7 +25,9 @@ import torchvision.transforms as visionTransforms
 import PIL.Image as Image
 from torchvision.transforms import ToTensor,ToPILImage
 
-df=pd.read_csv("Datasets/Task3_Cleaned_Multimodal.csv",index_col=0)
+df=pd.read_csv("path_to_add/MIDAS_Task3/Datasets/Task3_Cleaned_Multimodal.csv",index_col=0)  #Please add path_to_add that is required for your local Machine
+
+df['Image Path']="path_to_add/MIDAS_Task3/"+df['Image Path'] #Please add path_to_add that is required for your local Machine
 
 dfTrain,dfVal,dfTest=np.split(df.sample(frac=1, random_state=42), [int(.8 * len(df)), int(.9 * len(df))])
 dfTrain=dfTrain.reset_index(drop=True)
