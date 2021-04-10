@@ -1,4 +1,6 @@
-# MIDAS_Task3
+# MIDAS Task-3
+
+## This repository contains the code and documentation for MIDAS@IIITD Summer Internship/RA Task 2021 Task 3
 
 ## Folder Description:
 1. Datasets: Comprises of all the csv files that are needed for any .ipynb/.py file
