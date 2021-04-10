@@ -12,7 +12,7 @@ from sentence_transformers import SentenceTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
-df=pd.read_csv("path_to_add/MIDAS_Task3/Datasets/Task3_Cleaned_TextModality.csv",index_col=0)  #Please add path_to_add that is required for your local Machine
+df=pd.read_csv("/root/MIDAS_Task3/Datasets/Task3_Cleaned_TextModality.csv",index_col=0)  #Please add path_to_add that is required for your local Machine
 
 sentenceTransformerModel=SentenceTransformer('stsb-distilbert-base')
 X = sentenceTransformerModel.encode(df['description'])

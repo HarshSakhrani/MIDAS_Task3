@@ -57,11 +57,16 @@ regex==2021.4.4
 requests==2.24.0
 ruamel-yaml==0.15.87
 sacremoses==0.0.44
+scikit-learn==0.24.1
 scipy==1.6.2
 seaborn==0.11.1
+sentence-transformers==1.0.4
+sentencepiece==0.1.95
 setuptools==50.3.1.post20201107
 six==1.15.0
+sklearn==0.0
 soupsieve==2.2
+threadpoolctl==2.1.0
 tokenizers==0.10.2
 torch==1.8.1
 torchelastic==0.2.2
