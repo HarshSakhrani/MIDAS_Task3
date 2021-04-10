@@ -1,4 +1,4 @@
-Google Drive Links to download the models:
+Download the respective models by accessing the following Google Drive Links:
 
 SentTransformer_RandomForest: https://drive.google.com/file/d/1Zk2lUFIOaR4wBviF2tWr4cx1HaiYlSU0/view?usp=sharing
 
@@ -8,3 +8,5 @@ Encoder_KimCNN: https://drive.google.com/file/d/1WnX7uNGMlftq-tuKLsrAK3zty67EkhV
 
 MultiModal Model: https://drive.google.com/file/d/1pB_pUDm9MRILN8oKxTL1zt9L3ZTiyY04/view?usp=sharing
 
+
+Make sure that all the models are present in the Models Folder only

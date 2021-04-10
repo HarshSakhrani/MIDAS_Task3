@@ -1,0 +1,12 @@
+1. Before running any python file in this folder one needs to make sure that the respective model has been downloaded in the Models Folder.
+
+   Following is the list that tells you which model is required for which python file:
+
+   a.MIDAS_Task3_SentTransformer_RandomForest_Eval.py:	RandomForest.sav
+   b.MIDAS_Task3_KimCNN_Eval.py:			KimCNN.pt
+   c.MIDAS_Task3_Encoder_KimCNN_Eval.py:		Encoder_KimCNN.pt
+   d.MIDAS_Task3_MultiModal_Eval.py:			MultiModalModel.pt 
+
+2. Change the csv file path and model path(Mentioned in comments for each python file) before running any python file in this folder. 
+
+3. Before running MIDAS_Task3_MultiModal_Eval.py make sure you have followed all the instructions mentioned in the Datasets Folder

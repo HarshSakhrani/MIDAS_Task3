@@ -1,0 +1,3 @@
+This folder comprises of all the architecture and pre-processing notebooks.
+
+Change the csv file path and model path(Mentioned in comments in the respective cells of each notebook) before running any notebook in this folder.

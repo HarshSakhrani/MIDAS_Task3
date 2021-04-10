@@ -1,0 +1,6 @@
+1. Download Task3_Images.zip by accessing the following link:
+   https://drive.google.com/file/d/1q65iLdSOSsqQxtRnW8I6DCNOTZNao7K4/view?usp=sharing
+
+2. Change the necessary file paths in Unzip.py
+
+3. Run Unzip.py
